@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick Quiz</title>
+  <link rel="stylesheet" href="quickquiz.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Home -->
+    <section id="home" class="card flex-column">
+      <h1>Quick Quiz</h1>
+      <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+      <button id="rules-btn" class="btn btn-outline">How to Play</button>
+    </section>
+
+    <!-- Rules -->
+    <section id="rules" class="card flex-column hidden">
+      <h1>How to Play</h1>
+      <div class="rules">
+        <p>1) You have <strong>15 seconds</strong> per question.</p>
+        <p>2) Once you select an answer, it can’t be changed.</p>
+        <p>3) If time runs out, you can’t choose an option.</p>
+        <p>4) You can’t exit the quiz while playing.</p>
+        <p>5) Score increases for every correct answer.</p>
+      </div>
+      <button id="back-btn" class="btn">Back to Home</button>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden">
+      <div class="quiz-header">
+        <div class="timer">
+          <span class="label">Time Left</span>
+          <span class="timer-sec">15</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-text">
+            Question <span id="question-number">1</span> of <span id="total-questions">5</span>
+          </div>
+          <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+      </div>
+
+      <h2 id="question" class="question">Question will appear here</h2>
+
+      <div id="answer-buttons" class="answers"></div>
+
+      <div class="quiz-footer">
+        <span class="question-counter">1 of 5 Questions</span>
+        <button id="next-btn" class="btn btn-primary next-btn hidden">Next Question</button>
+      </div>
+    </section>
+
+    <!-- Score -->
+    <section id="score" class="card flex-column hidden">
+      <div class="trophy">🏆</div>
+      <h1>Quiz Completed!</h1>
+      <h2>Your Score: <span id="final-score">0</span> / <span id="max-score">0</span></h2>
+
+      <div class="score-box">
+        <p>✅ Correct Answers: <span id="correct-answers">0</span></p>
+        <p>❌ Wrong Answers: <span id="wrong-answers">0</span></p>
+      </div>
+
+      <div class="score-actions">
+        <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+        <button id="go-home-btn" class="btn btn-outline">Go Home</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="quickquiz.js"></script>
+</body>
+</html>
